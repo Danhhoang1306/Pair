@@ -10,6 +10,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -18,32 +21,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Doctests in mt5_risk_monitor.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Doctests in position_sizer.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_btc_eth_orders.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_hedge_adjustment.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_hedge_auto.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.check_startup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fix_all_imports.executor&quot;: &quot;Run&quot;,
-    &quot;Python.fix_config.executor&quot;: &quot;Run&quot;,
-    &quot;Python.launch_gui.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main_cli.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main_window_integrated.executor&quot;: &quot;Run&quot;,
-    &quot;Python.realtime_market_data.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/pair_trading_pro&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Doctests in mt5_risk_monitor.executor": "Run",
+    "Python tests.Doctests in position_sizer.executor": "Run",
+    "Python tests.Python tests in test_btc_eth_orders.py.executor": "Run",
+    "Python tests.Python tests in test_hedge_adjustment.py.executor": "Run",
+    "Python tests.Python tests in test_hedge_auto.py.executor": "Run",
+    "Python.check_startup.executor": "Run",
+    "Python.data_manager.executor": "Run",
+    "Python.fix_all_imports.executor": "Run",
+    "Python.fix_config.executor": "Run",
+    "Python.launch_gui.executor": "Run",
+    "Python.main_cli.executor": "Run",
+    "Python.main_window_integrated.executor": "Run",
+    "Python.realtime_market_data.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "F:/pair_trading_pro",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\pair_trading_pro" />
@@ -102,7 +106,7 @@
       <workItem from="1766971377954" duration="1499000" />
       <workItem from="1766977839196" duration="3655000" />
       <workItem from="1766997471140" duration="752000" />
-      <workItem from="1767009839798" duration="1953000" />
+      <workItem from="1767009839798" duration="2572000" />
     </task>
     <servers />
   </component>

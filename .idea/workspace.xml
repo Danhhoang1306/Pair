@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="48a7ec6a-df5f-400e-95a8-44d2408f8115" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="37PiGd3cpEKpMiPLSkIJBvnVNor" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Doctests in mt5_risk_monitor.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Doctests in position_sizer.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_btc_eth_orders.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_hedge_adjustment.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_hedge_auto.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_startup.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fix_all_imports.executor&quot;: &quot;Run&quot;,
+    &quot;Python.fix_config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.launch_gui.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_cli.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main_window_integrated.executor&quot;: &quot;Run&quot;,
+    &quot;Python.realtime_market_data.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/pair_trading_pro&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\pair_trading_pro" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="fix_config" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="pair_trading_pro" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/fix_config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="48a7ec6a-df5f-400e-95a8-44d2408f8115" name="Changes" comment="" />
+      <created>1766811013037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1766811013037</updated>
+      <workItem from="1766811014058" duration="1032000" />
+      <workItem from="1766827528542" duration="1511000" />
+      <workItem from="1766829059922" duration="18407000" />
+      <workItem from="1766882502571" duration="18840000" />
+      <workItem from="1766919211645" duration="2321000" />
+      <workItem from="1766928865159" duration="154000" />
+      <workItem from="1766929772273" duration="29000" />
+      <workItem from="1766940778068" duration="2549000" />
+      <workItem from="1766943399252" duration="5152000" />
+      <workItem from="1766971377954" duration="1499000" />
+      <workItem from="1766977839196" duration="3655000" />
+      <workItem from="1766997471140" duration="752000" />
+      <workItem from="1767009839798" duration="1953000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/pair_trading_pro$main_window_integrated.coverage" NAME="main_window_integrated Coverage Results" MODIFIED="1766943045341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$fix_config.coverage" NAME="fix_config Coverage Results" MODIFIED="1767009842582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$launch_gui.coverage" NAME="launch_gui Coverage Results" MODIFIED="1767057424440" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$.coverage" NAME=" Coverage Results" MODIFIED="1766947702961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$main_cli.coverage" NAME="main_cli Coverage Results" MODIFIED="1766849026550" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$Doctests_in_position_sizer.coverage" NAME="Doctests in position_sizer Coverage Results" MODIFIED="1766888693929" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/risk" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$data_manager.coverage" NAME="data_manager Coverage Results" MODIFIED="1766856274506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$realtime_market_data.coverage" NAME="realtime_market_data Coverage Results" MODIFIED="1766844300695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$check_startup.coverage" NAME="check_startup Coverage Results" MODIFIED="1766828838335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$fix_all_imports.coverage" NAME="fix_all_imports Coverage Results" MODIFIED="1766829315843" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pair_trading_pro$Doctests_in_mt5_risk_monitor.coverage" NAME="Doctests in mt5_risk_monitor Coverage Results" MODIFIED="1766890809957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/risk" />
+  </component>
+</project>

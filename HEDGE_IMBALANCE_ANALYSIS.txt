@@ -1,0 +1,286 @@
+# HEDGE IMBALANCE REBALANCING - CURRENT STATUS
+# ================================================================
+
+## 🔍 CURRENT IMPLEMENTATION:
+
+### **File:** `strategy/hybrid_rebalancer.py`
+### **Function:** `check_hedge_drift()` (Line 233-293)
+
+---
+
+## 📊 CURRENT LOGIC:
+
+### **Trigger Conditions:**
+
+```python
+# Line 266-267: Calculate drift
+drift = target_silver_lots - current_silver_lots
+drift_pct = abs(drift) / target_silver_lots
+
+# Line 270-271: Check threshold
+if drift_pct < self.hedge_drift_threshold:
+    return None  # No adjustment needed
+```
+
+### **Default Threshold:**
+```yaml
+# assets/default_config.yaml - Line 26
+hedge_drift_threshold: 0.05  # 5%
+```
+
+---
+
+## 🧮 CALCULATION EXAMPLE:
+
+### **Scenario 1: Small Position**
+```
+Gold: 0.01 lots
+Current Silver: 0.25 lots
+Target Silver: 0.26 lots (hedge ratio changed)
+
+Drift = 0.26 - 0.25 = 0.01 lots
+Drift % = 0.01 / 0.26 = 3.85%
+
+3.85% < 5% threshold
+→ ❌ NO REBALANCE (even though drift = 0.01 lots!)
+```
+
+### **Scenario 2: Large Position**
+```
+Gold: 1.0 lots
+Current Silver: 25.0 lots
+Target Silver: 25.01 lots
+
+Drift = 25.01 - 25.0 = 0.01 lots
+Drift % = 0.01 / 25.01 = 0.04%
+
+0.04% < 5% threshold
+→ ❌ NO REBALANCE
+```
+
+### **Scenario 3: Threshold Exceeded**
+```
+Gold: 0.01 lots
+Current Silver: 0.25 lots
+Target Silver: 0.28 lots (larger hedge ratio change)
+
+Drift = 0.28 - 0.25 = 0.03 lots
+Drift % = 0.03 / 0.28 = 10.7%
+
+10.7% > 5% threshold
+→ ✅ REBALANCE!
+```
+
+---
+
+## ❌ PROBLEM IDENTIFIED:
+
+### **Issue: Percentage-Only Check**
+
+Current logic ONLY checks **percentage drift**, not **absolute drift**.
+
+**Problems:**
+1. **Small positions ignored:**
+   - 0.01 lots drift on small position = 3.85% → Ignored
+   - But 0.01 lots could be significant for risk!
+
+2. **Large positions over-adjusted:**
+   - 0.01 lots drift on large position = 0.04% → Ignored
+   - This is actually fine, but inconsistent with small positions
+
+3. **No minimum absolute threshold:**
+   - System doesn't consider "0.01 lots drift = always rebalance"
+
+---
+
+## ✅ PROPOSED SOLUTION:
+
+### **Add Dual Threshold System:**
+
+```python
+# Check BOTH percentage AND absolute drift
+# Trigger if EITHER condition met:
+# 1. Drift % > hedge_drift_threshold (e.g., 5%)
+# 2. Absolute drift > min_absolute_drift (e.g., 0.01 lots)
+
+MIN_ABSOLUTE_DRIFT = 0.01  # lots
+
+# Line 270-271: CURRENT
+if drift_pct < self.hedge_drift_threshold:
+    return None
+
+# NEW (proposed):
+if drift_pct < self.hedge_drift_threshold and abs(drift) < MIN_ABSOLUTE_DRIFT:
+    return None  # Both thresholds not met
+```
+
+### **Logic:**
+```
+IF drift_pct >= 5% OR abs_drift >= 0.01 lots:
+    → REBALANCE
+ELSE:
+    → NO REBALANCE
+```
+
+---
+
+## 📊 NEW BEHAVIOR EXAMPLES:
+
+### **Example 1: Small Position, Small Drift**
+```
+Drift = 0.005 lots (0.5%)
+Percentage: 2% < 5% ❌
+Absolute: 0.005 < 0.01 ❌
+→ NO REBALANCE ✅ (correct, drift too small)
+```
+
+### **Example 2: Small Position, 0.01 Drift**
+```
+Drift = 0.01 lots
+Percentage: 3.85% < 5% ❌
+Absolute: 0.01 >= 0.01 ✅
+→ REBALANCE ✅ (absolute threshold met!)
+```
+
+### **Example 3: Large Position, Small %**
+```
+Drift = 0.01 lots on 25 lots
+Percentage: 0.04% < 5% ❌
+Absolute: 0.01 >= 0.01 ✅
+→ REBALANCE ✅ (absolute threshold met!)
+```
+
+### **Example 4: Large Position, Large %**
+```
+Drift = 1.5 lots on 25 lots
+Percentage: 6% >= 5% ✅
+Absolute: 1.5 >= 0.01 ✅
+→ REBALANCE ✅ (both met!)
+```
+
+---
+
+## 🎯 CONFIGURATION:
+
+### **Add to `assets/default_config.yaml`:**
+
+```yaml
+# Rebalancing
+hedge_drift_threshold: 0.05      # 5% - percentage threshold
+min_absolute_drift: 0.01         # 0.01 lots - absolute threshold
+```
+
+### **Both thresholds work together:**
+- **Percentage:** Catches large positions with significant drift
+- **Absolute:** Catches small positions with any meaningful drift
+
+---
+
+## 💡 BENEFITS:
+
+| Scenario | Old Logic | New Logic |
+|----------|-----------|-----------|
+| Small pos, 0.01 drift | ❌ Ignored (3.85% < 5%) | ✅ Rebalanced (abs >= 0.01) |
+| Large pos, 0.01 drift | ❌ Ignored (0.04% < 5%) | ✅ Rebalanced (abs >= 0.01) |
+| Large pos, 1.5 drift | ✅ Rebalanced (6% > 5%) | ✅ Rebalanced (both met) |
+| Tiny drift 0.005 | ✅ Ignored (correct) | ✅ Ignored (correct) |
+
+**→ More consistent risk management!**
+
+---
+
+## 📝 CODE IMPLEMENTATION:
+
+### **Current Code (Line 266-271):**
+```python
+drift = target_silver_lots - current_silver_lots
+drift_pct = abs(drift) / target_silver_lots
+
+# Check threshold
+if drift_pct < self.hedge_drift_threshold:
+    return None  # Within tolerance
+```
+
+### **Proposed Update:**
+```python
+drift = target_silver_lots - current_silver_lots
+drift_pct = abs(drift) / target_silver_lots
+abs_drift = abs(drift)
+
+# Dual threshold check
+percentage_ok = drift_pct < self.hedge_drift_threshold
+absolute_ok = abs_drift < self.min_absolute_drift
+
+if percentage_ok and absolute_ok:
+    return None  # Both thresholds not exceeded
+    
+# Log which threshold triggered
+if not percentage_ok:
+    logger.info(f"  Trigger: Percentage drift {drift_pct:.2%} > {self.hedge_drift_threshold:.2%}")
+if not absolute_ok:
+    logger.info(f"  Trigger: Absolute drift {abs_drift:.4f} >= {self.min_absolute_drift:.4f}")
+```
+
+---
+
+## 🎯 ANSWER TO YOUR QUESTION:
+
+**Q: "Khi hedge imbalance -0.01 =< lots >= 0.01 thì có rebalance chưa?"**
+
+**A: CURRENTLY - NO! ❌**
+
+### **Current Behavior:**
+```
+IF drift = ±0.01 lots:
+    drift_pct = 0.01 / target (varies)
+    
+    For small position (target=0.26):
+        drift_pct = 3.85% < 5%
+        → NO REBALANCE ❌
+    
+    For large position (target=25):
+        drift_pct = 0.04% < 5%
+        → NO REBALANCE ❌
+```
+
+**Current system ONLY checks percentage, so 0.01 lots drift is often IGNORED!**
+
+---
+
+## ✅ RECOMMENDED FIX:
+
+**Add absolute drift threshold:**
+
+```yaml
+# Config
+min_absolute_drift: 0.01  # Always rebalance if drift >= 0.01 lots
+```
+
+```python
+# Code
+if drift_pct < threshold and abs(drift) < min_absolute_drift:
+    return None
+# Else: REBALANCE
+```
+
+**This ensures ANY drift >= 0.01 lots triggers rebalance, regardless of percentage!**
+
+---
+
+## 📊 SUMMARY:
+
+| Question | Current | Needed |
+|----------|---------|--------|
+| **Check % drift?** | ✅ Yes (5%) | ✅ Keep |
+| **Check absolute drift?** | ❌ No | ✅ Add (0.01) |
+| **0.01 lots triggers?** | ❌ No | ✅ Should |
+| **Risk management** | ⚠️ Incomplete | ✅ Complete |
+
+---
+
+**STATUS: ❌ NOT IMPLEMENTED YET**
+**RECOMMENDATION: ✅ ADD ABSOLUTE DRIFT CHECK**
+
+---
+
+Generated: 2025-12-28
